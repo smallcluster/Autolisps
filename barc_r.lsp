@@ -3,11 +3,11 @@
 ; Version: 1.0
 ; License: The Unlicense (https://unlicense.org/)
 ; Description (FR) : 
-;     Dessine des aciers circulaires (dans le sens trigonométrique) sous autocad en tenant compte de la longueur
+;     Dessine des aciers circulaires (dans le sens trigonomÃ©trique) sous autocad en tenant compte de la longueur
 ;     de la barre, du centre du cercle et de la longueur de recouvrement.
-;     La dernière barre est coupée si nécessaire ou une eclisse de recouvrement est ajoutée
-;     si le recouvrement sur la première barre est insuffisant (une alerte est émise dans ce cas).
-;     Testé sous AutoCAD 2014.
+;     La derniÃ¨re barre est coupÃ©e si nÃ©cessaire ou une eclisse de recouvrement est ajoutÃ©e
+;     si le recouvrement sur la premiÃ¨re barre est insuffisant (une alerte est Ã©mise dans ce cas).
+;     TestÃ© sous AutoCAD 2014.
 ; Description (EN): 
 ;     Draws circular rebars (counter-clockwise) in AutoCAD considering the length of the bar,
 ;     the center of the circle, and the overlap length.
@@ -117,7 +117,7 @@
 		(setq splice_start (ptrot pstart (- 0.0 REC_ANGLE)))
 		(setq splice_end (ptrot pstart REC_ANGLE))
 		(colored_arc splice_start splice_end)
-		(alert "ATTENTION: eclisse de recouvrement ajoutée, merci de l'ajuster au besoin !")
+		(alert "ATTENTION: eclisse de recouvrement ajoutÃ©e, merci de l'ajuster au besoin !")
 	)
 )
 (setvar "cmdecho"1)
