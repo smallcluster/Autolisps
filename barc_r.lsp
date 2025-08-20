@@ -15,7 +15,9 @@
 ;     if the overlap on the first bar is insufficient (a warning is issued in this case).
 ;     Tested under AutoCAD 2014.
 
-(defun c:barc_r(/ pcenter pstart overlap len)
+(defun c:barc_r(/ pcenter pstart overlap len R REC_ANGLE ARC_ANGLE ROT_ANGLE 
+                ROT_LEN FINAL_ANGLE FINAL_LEN CIRCLE_LEN total_len
+                arc_start arc_end color_idx splice_start splice_end)
 (setvar "cmdecho"0)
   
 ;----------------------------------------------------------------------------
@@ -43,7 +45,10 @@
 ; Mutables
 (setq total_len 0)
 (setq arc_start pstart)
+(setq arc_end pstart)
 (setq color_idx 1)
+(setq splice_start pstart)
+(setq splice_end pstart)
 
 ;----------------------------------------------------------------------------
 ; FUNCTIONS
