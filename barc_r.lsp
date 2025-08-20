@@ -7,13 +7,13 @@
 ;     de la barre, du centre du cercle et de la longueur de recouvrement.
 ;     La dernière barre est coupée si nécessaire ou une eclisse de recouvrement est ajoutée
 ;     si le recouvrement sur la première barre est insuffisant (une alerte est émise dans ce cas).
-;     Testé sous AutoCAD 2014.
+;     Testé sous AutoCAD 2014, 2016 & 2026.
 ; Description (EN): 
 ;     Draws circular rebars (counter-clockwise) in AutoCAD considering the length of the bar,
 ;     the center of the circle, and the overlap length.
 ;     Last bar length is trimmed if necessary or an overlap splice is added
 ;     if the overlap on the first bar is insufficient (a warning is issued in this case).
-;     Tested under AutoCAD 2014.
+;     Tested under AutoCAD 2014, 2016 & 2026.
 
 (defun c:barc_r(/ pcenter pstart overlap len R REC_ANGLE ARC_ANGLE ROT_ANGLE 
                 ROT_LEN FINAL_ANGLE FINAL_LEN CIRCLE_LEN total_len
