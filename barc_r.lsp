@@ -21,10 +21,10 @@
 ;----------------------------------------------------------------------------
 ; PROGRAM INPUTS
 ;----------------------------------------------------------------------------
-(setq pcenter (getpoint"\nCentre du rayon : ")) ; Center point of the circle
-(setq pstart  (getpoint"\nReference <Autre point sur le cercle - Depard de la barre> : ")) ; Reference point on the circle (start of the bar)
-(setq overlap (getreal "\nLongueur de recouvrement (en metre) : ")) ; Length of the overlap (in meters)
-(setq len     (getreal "\nLongueur de la barre (en metre) : ")) ; Length of the bar (in meters)
+(setq pcenter (getpoint"\nCenter point:"))
+(setq pstart  (getpoint"\nStart point:"))
+(setq overlap (getreal "\nOverlap length:"))
+(setq len     (getreal "\nArc length:"))
 
 
 ;----------------------------------------------------------------------------
@@ -51,9 +51,9 @@
   
 ; Draws an colored arc around the user issued center point.
 ; Each call to this function will change the color index of the arc (ranging from 1 to 6).
-(defun colored_arc (start end)
-  (command "_arc" start "_c" pcenter end)
-  (if (> (+ color_idx 1) 6)
+(defun colored_arc (s e)
+	(command "_arc" s "_c" pcenter e)
+	(if (> (+ color_idx 1) 6)
 		(setq color_idx 1)
 		(setq color_idx (+ color_idx 1))
 	)
@@ -92,9 +92,9 @@
   (setq arc_end (ptrot arc_start ARC_ANGLE))
   (colored_arc arc_start arc_end)
   ; Update the next arc start point.
-	(setq arc_start (ptrot arc_start ROT_ANGLE))
-	; Update the length of the total arcs drawn so far (ignoring overlaps).
-	(setq total_len (+ total_len ROT_LEN))
+  (setq arc_start (ptrot arc_start ROT_ANGLE))
+  ; Update the length of the total arcs drawn so far (ignoring overlaps).
+  (setq total_len (+ total_len ROT_LEN))
 )
   
 ; Now let's see how to place the last bar:
