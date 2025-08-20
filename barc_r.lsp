@@ -1,6 +1,6 @@
 ; Author: Pierre JAFFUER
 ; Date: 19/08/2025
-; Version: 1.0
+; Version: 1.0.1
 ; License: The Unlicense (https://unlicense.org/)
 ; Description (FR) : 
 ;     Dessine des aciers circulaires (dans le sens trigonométrique) sous autocad en tenant compte de la longueur
@@ -56,8 +56,8 @@
   
 ; Draws an colored arc around the user issued center point.
 ; Each call to this function will change the color index of the arc (ranging from 1 to 6).
-(defun colored_arc (s e)
-	(command "_arc" s "_c" pcenter e)
+(defun colored_arc (start end)
+	(command "_arc" "_non" start "_c" "_non" pcenter "_non" end)
 	(if (> (+ color_idx 1) 6)
 		(setq color_idx 1)
 		(setq color_idx (+ color_idx 1))
