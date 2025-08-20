@@ -1,5 +1,5 @@
 ; Author: Pierre JAFFUER
-; Creation date: 19/08/2025
+; Date: 20/08/2025
 ; Version: 1.0.1
 ; License: The Unlicense (https://unlicense.org/)
 ; Description (FR) : 
