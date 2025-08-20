@@ -122,7 +122,7 @@
 		(setq splice_start (ptrot pstart (- 0.0 REC_ANGLE)))
 		(setq splice_end (ptrot pstart REC_ANGLE))
 		(colored_arc splice_start splice_end)
-		(alert "ATTENTION: eclisse de recouvrement ajoutée, merci de l'ajuster au besoin !")
+		(alert "WARNING: Splice added.\nPlease adjust manually if needed.")
 	)
 )
 (setvar "cmdecho"1)
